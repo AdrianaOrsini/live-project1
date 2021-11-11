@@ -25,12 +25,22 @@ public class WebDriverUtils {
             driver = null;
         }
     }
-        public static void closeDriver() {
-            if (driver != null) {
-                driver.quit();
-                driver = null;
-            }
+
+    public static void goBackDriver(){
+        if (driver != null){
+            driver.navigate().back();
+            driver = null;
         }
+    }
+
+    public static void closeDriver() {
+        if (driver != null) {
+            driver.close();
+            driver = null;
+        }
+    }
+
+
 
         public static void main(String[] args) {
         getDriver().findElement(By.xpath("")).click();
